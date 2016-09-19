@@ -6,3 +6,5 @@ Fork and clone repo, push back any changes to your own branch, and open up a pul
 
 perhaps use this for our calendar?
 http://www.jqueryscript.net/time-clock/Simple-Responsive-Availability-Calendar-Plugin-For-jQuery.html
+
+npm install bcrypt
