@@ -8,7 +8,6 @@
   },
   "scripts": {
     "test": "./node_modules/jasmine/bin/jasmine.js spec/ —verbose"
-
   },
   "repository": {
     "type": "git",
@@ -24,6 +23,8 @@
     "express": "^4.14.0"
   },
   "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
     "jasmine": "^2.5.2"
   }
 }
