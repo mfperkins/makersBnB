@@ -1,0 +1,29 @@
+{
+  "name": "makersbnb",
+  "version": "1.0.0",
+  "description": "byte-0 best effort in node.js",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/jasmine/bin/jasmine.js spec/ —verbose"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jh2633/makersBnb.git"
+  },
+  "author": "byte-0",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jh2633/makersBnb/issues"
+  },
+  "homepage": "https://github.com/jh2633/makersBnb#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "jasmine": "^2.5.2"
+  }
+}
