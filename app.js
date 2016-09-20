@@ -1,7 +1,7 @@
 var express = require('express');
 var config = require('./_config');
-var app = express();
 var models = require("./models");
+var app = express();
 
 app.set('port', process.env.PORT || 3000);
 

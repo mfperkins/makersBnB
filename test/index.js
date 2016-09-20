@@ -10,18 +10,14 @@ var Browser = require('zombie');
 
 describe ('User visits index', function() {
 
-  before(function(){
-    this.server = http.createServer(app).listen(3000);
-    this.browser = new Browser({site: 'http://localhost:3000' });
-    console.log(this.browser);
-  });
-
-  before(function(done) {
+  before(function(done){
+    this.server = http.createServer(app).listen(3456);
+    this.browser = new Browser({site: 'http://localhost:3456' });
     this.browser.visit('/', done);
   });
 
   it('should load a welcome page', function(done) {
-    expet(this.browser.text('h1')).to.equal("Hello there!");
+    expect(this.browser.text('h1')).to.equal("Hello there!");
     done();
   });
 
