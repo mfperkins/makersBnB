@@ -25,7 +25,8 @@
   },
   "devDependencies": {
     "bcrypt": "^0.8.7",
-    "chai": "^3.5.0",
+    "chai": "^3.2.0",
+    "chai-http": "^1.0.0",
     "grunt": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-webdriver": "^2.0.1",
