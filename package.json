@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "node_modules/jasmine/bin/jasmine.js spec/ -—verbose",
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,6 @@
   "homepage": "https://github.com/jh2633/makersBnb#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "mysql": "^2.11.1",
     "pg": "^6.1.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.24.3"

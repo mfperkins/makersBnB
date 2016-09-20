@@ -1,6 +1,7 @@
 var express = require('express');
 var config = require('./_config');
 var app = express();
+var models = require("./models");
 
 // mongoose.connect(config.mongoURI[app.settings.env], function(err, res) {
 //   if(err) {
@@ -11,6 +12,15 @@ var app = express();
 // });
 
 app.set('port', process.env.PORT || 3000);
+
+models.sequelize.sync().then(function() {
+  app.listen(app.get('port'), function() {
+    console.log('Listening on:', app.get('port'));
+  });
+});
+
+
+
 app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/public'));
 
@@ -19,8 +29,6 @@ app.get('/', function(req, res) {
 
 });
 
-app.listen(app.get('port'), function() {
-  console.log('Listening on:', app.get('port'));
-});
+
 
 module.exports = app;
