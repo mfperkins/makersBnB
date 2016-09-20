@@ -6,10 +6,9 @@ Browser.localhost('example.com', 3000);
 
 describe ('User visits index', function() {
   const browser = new Browser();
-  url = 'http://localhost:3000';
 
   before(function(done){
-    browser.visit(url, done);
+    browser.visit('/', done);
   });
 
   it('should load a welcome page', function() {
