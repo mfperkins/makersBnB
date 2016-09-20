@@ -6,9 +6,6 @@ var Sequelize = require("sequelize");
 var env       = process.env.NODE_ENV || "development";
 var config    = require(path.join(__dirname, '..', '_config.js'))[env];
 var sequelize = new Sequelize(config.database, config);
-// var sequelize = new Sequelize('bnb_dev', 'mfperkins', 'password', {
-//   dialect: 'postgres',
-// });
 var db        = {};
 
 fs

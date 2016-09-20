@@ -39,6 +39,7 @@
     "pug": "^2.0.0-beta6",
     "selenium-standalone": "^5.7.1",
     "wdio-mocha-framework": "^0.4.3",
-    "webdriverio": "^4.2.16"
+    "webdriverio": "^4.2.16",
+    "zombie": "^4.2.1"
   }
 }
