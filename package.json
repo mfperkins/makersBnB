@@ -21,7 +21,11 @@
   },
   "homepage": "https://github.com/jh2633/makersBnb#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "mysql": "^2.11.1",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.24.3"
   },
   "devDependencies": {
     "bcrypt": "^0.8.7",

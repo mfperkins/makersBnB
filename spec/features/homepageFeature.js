@@ -18,7 +18,6 @@ describe('Homepage Tests', function() {
     client
       .url('http://localhost:3000')
       .getTitle(function(err, title) {
-        expect(err).to.not.be.true;
         expect(title).to.eql('Hey');
       })
       .call(done);
