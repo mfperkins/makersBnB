@@ -25,9 +25,11 @@
   },
   "devDependencies": {
     "bcrypt": "^0.8.7",
+    "chai": "^3.5.0",
     "grunt": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
     "jasmine": "^2.5.2",
+    "mocha": "^3.0.2",
     "pug": "^2.0.0-beta6"
   }
 }
