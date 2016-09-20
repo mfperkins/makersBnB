@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/jasmine/bin/jasmine.js spec/ -—verbose",
+    "test": "node_modules/jasmine/bin/jasmine.js spec/ -—verbose",
     "start": "node index.js"
   },
   "repository": {

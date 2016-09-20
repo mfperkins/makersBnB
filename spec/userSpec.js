@@ -6,7 +6,7 @@ describe ("User", function() {
   describe ("on startup", function() {
 
     it("user should have a first name", function() {
-      expect(user.firstname).not.toBeDefined();
+      expect(user.firstname).toEqual("Bob");
     });
 
   });
