@@ -2,9 +2,6 @@ process.env.NODE_ENV = 'test';
 
 var chai = require('chai');
 var chaiHttp = require('chai-http');
-
-// var mongoose = require("mongoose");
-
 var server = require('../app.js');
 var expect = chai.expect;
 
@@ -34,6 +31,7 @@ describe('/', function() {
     .get('/')
     .end(function(err, res){
       expect(res).to.have.status(200);
+      console.log(process.env.NODE_ENV);
       done();
     });
   });
