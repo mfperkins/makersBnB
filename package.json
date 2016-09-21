@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "node_modules/.bin/mocha --reporter spec",
-    "start": "node app/bin/www"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
