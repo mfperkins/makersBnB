@@ -26,7 +26,7 @@ describe('/', function() {
   //   done();
   // });
 
-  it('should list load a GET request', function(done) {
+  it('should load a GET request', function(done) {
   chai.request(server)
     .get('/')
     .end(function(err, res){
