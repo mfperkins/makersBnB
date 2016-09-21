@@ -1,8 +1,11 @@
-var config = {};
+var config = {
 
-// config.mongoURI = {
-//   development: 'mongodb://localhost/node-testing',
-//   test: 'mongodb://localhost/node-test'
-// };
+  "development": {
+    "database": 'postgres://localhost/bnb_development',
+  },
+  "test": {
+    "database": 'postgres://localhost/bnb_test',
+  },
+};
 
 module.exports = config;
