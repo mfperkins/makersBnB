@@ -16,9 +16,10 @@ describe ('User visits index', function() {
     this.browser.visit('/', done);
   });
 
-  it('should load a welcome page', function(done) {
+  it('should load a welcome page', function() {
     expect(this.browser.text('h1')).to.equal("Hello there!");
-    done();
   });
+
+
 
 });

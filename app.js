@@ -19,4 +19,9 @@ app.get('/', function(req, res) {
 
 });
 
+app.get('/spaces', function(req, res) {
+  res.render('spaces', {h1: 'Spaces'});
+
+});
+
 module.exports = app;
