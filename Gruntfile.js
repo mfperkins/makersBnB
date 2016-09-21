@@ -1,28 +1,13 @@
-// module.exports = function(grunt){
-//
-//  grunt.initConfig({
-//    jshint: {
-//      all: ['Gruntfile.js', 'src/**/*.js', 'spec/**/*.js']
-//    }
-//  });
-//
-//  grunt.loadNpmTasks('grunt-contrib-jshint');
-//
-//  grunt.registerTask('default', ['jshint']);
-//
-// };
+module.exports = function(grunt){
 
-module.exports = function(grunt) {
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    webdriver: {
-      test: {
-        configFile: './test/wdio.conf.js'
-      }
-    }
-  });
+ grunt.initConfig({
+   jshint: {
+     all: ['Gruntfile.js', 'app/models**/*.js', 'test/**/*.js']
+   }
+ });
 
-  grunt.loadNpmTasks('grunt-webdriver');
+ grunt.loadNpmTasks('grunt-contrib-jshint');
 
-  grunt.registerTask('default', ['webdriver']);
+ grunt.registerTask('default', ['jshint']);
+
 };
