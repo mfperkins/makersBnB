@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use-strict';
 
 var db = require("sequelize-tools").db;
