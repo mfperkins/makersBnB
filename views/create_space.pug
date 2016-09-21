@@ -2,3 +2,10 @@ html
   head
     h1= h1
   body
+
+  form(action="/", method="get")
+    input(type="text", name="title")
+    input(type="text", name="description")
+    input(type="text", name="price")
+    input(type="text", name="availability")
+    input(type="submit", name="List your space!")
