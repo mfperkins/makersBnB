@@ -19,8 +19,20 @@ app.get('/', function(req, res) {
 
 });
 
+app.get('/new', function(req, res){
+  res.render('create_space', {h1: 'List a space'});
+});
+
 app.get('/spaces', function(req, res) {
-  res.render('spaces', {h1: 'Spaces'});
+  models.Space.findAll().then(function(space){
+    res.render('spaces', {
+      title: space.title,
+      description: space.description,
+      price: space.price,
+      availability: space.availability
+    });
+  });
+
 
 });
 

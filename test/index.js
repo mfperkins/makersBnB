@@ -16,10 +16,9 @@ describe ('User visits index', function() {
     this.browser.visit('/', done);
   });
 
-  it('should load a welcome page', function() {
+  it('should load a welcome page', function(done) {
     expect(this.browser.text('h1')).to.equal("Hello there!");
+    done();
   });
-
-
 
 });
