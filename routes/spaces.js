@@ -1,6 +1,8 @@
+var models  = require('../models');
 var express = require('express');
 var router = express.Router();
-var models  = require('../models');/* GET users listing. */
+
+/* GET users listing. */
 router.get('/new', function(req, res) {
   res.render('create_space', {h1: 'List a space'});
 });
@@ -14,6 +16,17 @@ router.get('/', function(req, res){
       price: space.price,
       availability: space.availability
     });
+});
+
+router.post('/', function(req, res, next){
+  models.Space.create({
+    title: req.body.title,
+    description: req.body.description,
+    price: req.body.price,
+    availability: req.body.availability,
+  }).then(function(){
+    res.redirect('/');
+  });
 });
 
 });
