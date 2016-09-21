@@ -1,7 +1,7 @@
 {
   "name": "makersbnb",
   "version": "1.0.0",
-  "description": "byte-0 best effort in node.js",
+  "description": "byte-0's best effort in node.js",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -15,7 +15,7 @@
     "url": "git+https://github.com/jh2633/makersBnb.git"
   },
   "author": "byte-0",
-  "license": "ISC",
+  "license": "ISC, MIT",
   "bugs": {
     "url": "https://github.com/jh2633/makersBnb/issues"
   },
@@ -31,18 +31,15 @@
     "pug": "^2.0.0-beta6",
     "sequelize": "^2.0.0-rc1",
     "sequelize-cli": "^2.4.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "bcrypt": "^0.8.7",
   },
   "devDependencies": {
-    "bcrypt": "^0.8.7",
     "chai": "^3.2.0",
     "chai-http": "^1.0.0",
-    "database-cleaner": "^1.1.0",
     "grunt": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
-    "jasmine": "^2.5.2",
     "mocha": "^3.0.2",
-    "pug": "^2.0.0-beta6",
     "zombie": "^2.0.0-alpha11"
   }
 }
