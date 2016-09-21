@@ -2,7 +2,11 @@
   "name": "makersbnb",
   "version": "1.0.0",
   "description": "byte-0's best effort in node.js",
-  "main": "index.js",
+  "engines": {
+    "node": "5.9.1",
+    "npm": "3.8.6"
+  },
+  "main": "app.js",
   "directories": {
     "test": "test"
   },
