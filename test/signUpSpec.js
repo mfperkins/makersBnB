@@ -30,7 +30,7 @@ describe ('User visits sign up', function() {
     });
 
       it('I can sign up as a new user', function() {
-      browser.assert.text('h1', 'Welcome homersimpson@springfield.com');
+      browser.assert.text('h1', 'homersimpson@springfield.com');
 
     });
   });
