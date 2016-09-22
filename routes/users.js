@@ -26,8 +26,9 @@ req.session.save();
 });
 
 router.get('/welcome', function(req, res) {
-  console.log(req.session.email);
-  res.render('welcome', {email: req.session.email });
+  if (req.session !== null) {
+    res.render('welcome', {email: req.session.email });
+  }
 });
 
 router.get('/sign-in', function(req, res) {
@@ -41,6 +42,13 @@ router.post('/sign-in-submit', function(req, res) {
     res.redirect('/users/welcome');
       });
 });
+
+router.post('/sign-out-submit', function(req, res) {
+  req.session.destroy(function() {
+    res.redirect('/users/welcome');
+  });
+ });
+
 
 
 

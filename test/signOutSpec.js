@@ -21,13 +21,14 @@ describe ('User signs out', function() {
   before(function(done){
     this.browser.fill('email', 'homersimpson@springfield.com');
     this.browser.fill('password', 'DOH!');
-    this.browser.pressButton("Sign In", done);
+    this.browser.pressButton("Sign In");
+    this.browser.visit('/users/welcome', done);
   });
 
-
-
   it('user can sign out', function() {
-    this.browser.assert.text('h1', 'homersimpson@springfield.com');
+    this.browser.pressButton("Sign Out");
+    this.browser.assert.text('unidentified', 'No user signed in');
+    this.browser.assert.text('body', null);
   });
 
 });

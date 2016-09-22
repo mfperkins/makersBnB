@@ -2,6 +2,10 @@ html
   head
 
   h1= email
+  h2= unidentified
 
 body
-  welcome
+
+  if (email)
+    form(action='/users/sign-out-submit', method='post')
+      input(type='submit', value='Sign Out')
