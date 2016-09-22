@@ -19,7 +19,7 @@ describe ('User creates a new space', function() {
     this.browser.visit('/spaces/new', done);
   });
 
-  describe ('fill in and submit form', function(done){
+  describe ('fill in and submit form', function(){
     before(function(done){
       this.browser
         .fill('title', 'Arctic Tree House')
