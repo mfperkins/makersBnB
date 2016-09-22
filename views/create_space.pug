@@ -1,7 +1,8 @@
-html
-  head
-    h1= h1
-  body
+extends layout
+
+block content
+
+  h1= h1
 
   form(action="/spaces", method="post")
     input(type="text", name="title")

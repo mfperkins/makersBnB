@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+.navbar-nav li a {
+ line-height: 30px;
+}
+
+span.glyphicon-bed {
+    font-size: 1.7em;
+}
