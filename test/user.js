@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 'use-strict';
 
 var db = require("sequelize-tools").db;
@@ -11,9 +10,9 @@ describe ("users", function() {
   //   db.init(done);
   // });
 
-  describe ("at start", function() {
-    it('should have a first name', function() {
-      expect(user).toEqual(null);
-    });
-  });
+  // describe ("at start", function() {
+  //   it('should have a first name', function() {
+  //     expect(user).toEqual(null);
+  //   });
+  // });
 });

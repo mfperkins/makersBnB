@@ -12,13 +12,13 @@ describe ('User creates a new space', function() {
 
   before(function(done){
     this.server = http.createServer(app).listen(3001);
-    browser = new Browser({site: 'http://localhost:3001' });
-    browser.visit('/spaces/new', done);
+    this.browser = new Browser({site: 'http://localhost:3001' });
+    this.browser.visit('/spaces/new', done);
   });
 
     describe ('fill in and submit form', function(done){
       before(function(done){
-        browser
+        this.browser
           .fill('title', 'Arctic Tree House')
           .fill('description', 'Elsa meets the Jungle Book')
           .fill('price', 10)
@@ -29,13 +29,13 @@ describe ('User creates a new space', function() {
           browser.assert.success();
         });
         it('should take you to the space page', function(){
-          browser.assert.text('h1', 'Hello there!');
+          browser.assert.text('h1', 'Welcome homersimpson@springfield.com');
         });
     });
 
-    this.server = http.createServer(app).listen(3458);
-    this.browser = new Browser({site: 'http://localhost:3458' });
-    this.browser.visit('/new', done);
+    // this.server = http.createServer(app).listen(3458);
+    // this.browser = new Browser({site: 'http://localhost:3458' });
+    // this.browser.visit('/new', done);
     // this.browser
     //   .fill('title', 'Arctic Tree House')
     //   .fill('description', 'Elsa meets the Jungle Book')
@@ -44,12 +44,10 @@ describe ('User creates a new space', function() {
     //   .pressButton('List your space!', done);
   });
 
-  it('should be able to create a new space', function(){
-    this.browser.assert.success();
-  });
+  // it('should be able to create a new space', function(){
+  //   this.browser.assert.success();
+  // });
 
   it('should take you to the space page', function(){
-    browser.assert.text('h1', 'Spaces');
-  });
-  
+
 });
