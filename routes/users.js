@@ -14,17 +14,19 @@ router.get('/sign-up', function(req, res) {
 });
 
 router.post('/', function(req, res) {
+req.session.email = req.body.email;
+req.session.save();
   models.user.create({
       email: req.body.email,
       password: req.body.password,
-      confirmation_password: req.body.confirmation_password
+      password_confirmation: req.body.password_confirmation
     }).then(function() {
   res.redirect('/users/welcome');
   });
 });
 
 router.get('/welcome', function(req, res) {
-  res.render('welcome', {email: 'Hey'});
+  res.render('welcome', {email: req.session.email });
 });
 
 
