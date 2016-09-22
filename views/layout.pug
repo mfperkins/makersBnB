@@ -3,11 +3,13 @@ html
   head
     title= title
 
-    link(rel='stylesheet', href='../public/css/bootstrap.min.css')
-    link(rel='stylesheet', href='../public/css/bootstrap-theme.min.css')
-    link(rel='stylesheet', href='../public/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
-    script(src='../public/js/bootstrap.min.js')
+    script(src='/javascripts/bootstrap.min.js')
+
+    include ./include/nav.pug
 
   body
     block content
