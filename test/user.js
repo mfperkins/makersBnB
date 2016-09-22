@@ -3,6 +3,7 @@
 var db = require("sequelize-tools").db;
 var expect    = require("chai").expect;
 var converter = require("../models/user");
+var models = require('../models');
 
 describe ("users", function() {
 
@@ -10,9 +11,13 @@ describe ("users", function() {
   //   db.init(done);
   // });
 
-  // describe ("at start", function() {
-  //   it('should have a first name', function() {
-  //     expect(user).toEqual(null);
-  //   });
-  // });
+  describe ("at start", function() {
+    it('should have a first name', function() {
+      models.user.create({
+        username: null
+      }).then(function() {
+      expect(models.user()).toEqual(null);
+      });
+    });
+  });
 });
