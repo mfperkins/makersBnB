@@ -1,25 +1,25 @@
 exports.DBConfig = {
 
   "development": {
-    "username": "",
+    "dbName": "bnb_development",
+    "user": process.env.USER,
     "password": null,
-    "database": "bnb_development",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "options": {
+      "dialect": "postgres",
+      "port": "5432"
+    }
   },
+
   "test": {
-    "username": "",
+    "dbName": "bnb_test",
+    "user": process.env.USER,
     "password": null,
-    "database": "bnb_test",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialectOption": 'postgres',
+    "options": {
+      "dialect": "postgres",
+      "port": "5432"
+    }
+
   },
-  "production": {
-    "username": "",
-    "password": null,
-    "database": "bnb_production",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  }
 
 };
