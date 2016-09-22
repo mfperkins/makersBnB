@@ -1,11 +1,14 @@
 html
   head
 
-  h1= email
-  h2= unidentified
 
-body
 
-  if (email)
+
+  body
+
+  if email
+    h1= email
     form(action='/users/sign-out-submit', method='post')
       input(type='submit', value='Sign Out')
+  else
+    h2= unidentified

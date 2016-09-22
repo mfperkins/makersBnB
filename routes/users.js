@@ -27,7 +27,7 @@ req.session.save();
 
 router.get('/welcome', function(req, res) {
   if (req.session !== null) {
-    res.render('welcome', {email: req.session.email });
+    res.render('welcome', {email: req.session.email, unidentified:'No user signed in'});
   }
 });
 
