@@ -1,13 +1,23 @@
 doctype html
 html
   head
-    title= title
+    title Byte0 BnB
 
-    link(rel='stylesheet', href='../public/css/bootstrap.min.css')
-    link(rel='stylesheet', href='../public/css/bootstrap-theme.min.css')
-    link(rel='stylesheet', href='../public/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
-    script(src='../public/js/bootstrap.min.js')
+    script(src='/javascripts/bootstrap.min.js')
 
   body
-    block content
+
+    include ./include/nav.pug
+
+    div(class="container-fluid")
+
+      block content
+
+    footer(class="footer")
+      hr
+      div(class="container")
+        p(class="text-muted") Made lovingly by the Byte0 Collective
