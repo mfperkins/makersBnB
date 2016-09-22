@@ -21,7 +21,7 @@ describe ('User visits sign up', function() {
     browser.assert.text('h1', 'Sign Up');
   });
 
-  describe ('User visits sign up', function(done) {
+  describe ('User visits sign up', function() {
     before(function(done){
       browser.fill('email', 'homersimpson@springfield.com');
       browser.fill('password', 'DOH!');

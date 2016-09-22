@@ -8,11 +8,12 @@ var app = require('../app.js');
 var http = require('http');
 var Browser = require('zombie');
 
-describe ('User visits sign in', function() {
+
+describe ('User signs out', function() {
 
   before(function(done){
-    this.server = http.createServer(app).listen(3008);
-    this.browser = new Browser({site: 'http://localhost:3008' });
+    this.server = http.createServer(app).listen(3009);
+    this.browser = new Browser({site: 'http://localhost:3009' });
     this.browser.visit('/users/sign-in', done);
 
   });
@@ -24,8 +25,9 @@ describe ('User visits sign in', function() {
   });
 
 
-    it('I can sign in as user', function() {
-      this.browser.assert.text('h1', 'homersimpson@springfield.com');
-    });
 
+  it('user can sign out', function() {
+    this.browser.assert.text('h1', 'homersimpson@springfield.com');
   });
+
+});
