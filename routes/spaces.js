@@ -12,7 +12,9 @@ router.get('/', function(req, res) {
 });
 
 router.get('/tree_house', function(req, res){
-  models.space.findAll().then(function(spaces){
+  models.space.findAll({where: {id: 1}}).then(function(spaces){
+    console.log('hello');
+    console.log(spaces);
   res.render('theSpace', {
     spaces: spaces
   });
