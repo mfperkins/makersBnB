@@ -9,7 +9,15 @@ html
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
     script(src='/javascripts/bootstrap.min.js')
 
+  body
+
     include ./include/nav.pug
 
-  body
-    block content
+    div(class="container-fluid")
+
+      block content
+
+    footer(class="footer")
+      hr
+      div(class="container")
+        p(class="text-muted") Made lovingly by the Byte0 Collective
