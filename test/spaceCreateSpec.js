@@ -19,7 +19,7 @@ describe ('User creates a new space', function() {
     this.browser.visit('/spaces/new', done);
   });
 
-  describe ('fill in and submit form', function(done){
+  describe ('fill in and submit form', function(){
     before(function(done){
       this.browser
         .fill('title', 'Arctic Tree House')
@@ -31,8 +31,19 @@ describe ('User creates a new space', function() {
       it('should be able to create a new space', function(){
         this.browser.assert.success();
       });
-      it('should take you to the space page', function(){
-        this.browser.assert.text('ul', 'Arctic Tree House Elsa meets the Jungle Book 10 never');
+      // it('should take you to the space page', function(){
+      //   this.browser.assert.text('ul', 'Arctic Tree House Elsa meets the Jungle Book 10 never');
+      // });
+      describe ('viewing specific space', function(){
+        before(function(done){
+          this.browser
+            .clickLink('Arctic Tree House', done);
+        });
+        it('should take you to the page of the property', function(){
+          this.browser.assert.success();
+          this.browser.assert.text('ul', 'Arctic Tree House Elsa meets the Jungle Book 10 never');
+        });
+
       });
     });
 });
