@@ -2,6 +2,12 @@ var express = require('express');
 var router = express.Router();
 var models  = require('../models');
 
+router.get('/', function(req, res) {
+  res.render('spaces', {
+    h1: 'Spaces!'
+  });
+});
+
 router.get('/new', function(req, res) {
   res.render('create_space', {
     h1: 'List a space'
@@ -15,9 +21,12 @@ router.post('/', function(req, res) {
       price: req.body.price,
       availability: req.body.availability
     }).then(function() {
-      res.redirect('/');
+      res.redirect('/spaces');
     });
 });
+
+
+
 
 
 module.exports = router;
