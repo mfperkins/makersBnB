@@ -11,6 +11,7 @@ var models = require("./models");
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var spaces = require('./routes/spaces');
+var bcrypt = require('bcryptjs');
 
 var app = express();
 
