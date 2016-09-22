@@ -12,7 +12,11 @@ describe("spaces", function() {
     models.space.drop();
     models.space.sync();
     done();
-      });
+  });
+
+  // after(function(){
+  //   models.space.drop();
+  // });
 
   it("count increases by one when a space is added", function(){
     models.space.create({
@@ -23,4 +27,6 @@ describe("spaces", function() {
     });
       // expect(models.space.count()).to.equal(1);
     });
+
+
 });

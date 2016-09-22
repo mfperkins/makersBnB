@@ -3,8 +3,11 @@ var router = express.Router();
 var models  = require('../models');
 
 router.get('/', function(req, res) {
-  res.render('spaces', {
-    h1: 'Spaces!'
+  models.space.findAll().then(function(spaces) {
+    res.render('spaces', {
+      h1: "Available spaces:",
+      spaces: spaces,
+    });
   });
 });
 

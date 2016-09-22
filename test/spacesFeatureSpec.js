@@ -17,7 +17,7 @@ describe ('User visits spaces page', function() {
   });
 
   it("should display a page with spaces", function() {
-    browser.assert.text("h1", "Spaces!");
+    browser.assert.text("h1", "Available spaces:");
   });
 
 });
