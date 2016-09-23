@@ -64,8 +64,6 @@ describe ("Clean DB", function () {
 
           before(function(done){
             browser.visit('/users/sign-in', done);
-            console.log(browser.text());
-            console.log("8");
           });
 
           describe ('User signs in', function () {
@@ -74,14 +72,11 @@ describe ("Clean DB", function () {
               browser.fill('email', 'homersimpson@springfield.com');
               browser.fill('password', 'DOH!');
               browser.pressButton("Sign In", done);
-              console.log("9");
             });
 
             it('I can sign in as user', function() {
-              console.log(browser.text());
               browser.assert.text('h1', 'Welcome to ByteZero Spaces');
               browser.assert.text('p#welcomeEmail', 'homersimpson@springfield.com');
-              console.log("10");
             });
 
           });
