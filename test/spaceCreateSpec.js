@@ -37,7 +37,7 @@ describe ('User creates a new space', function() {
       describe ('viewing specific space', function(){
         before(function(done){
           this.browser
-            .clickLink('Arctic Tree House', done);
+            .clickLink('Click here to edit this space!', done);
         });
 
         it('should take you to the page of the property', function(){
@@ -48,7 +48,7 @@ describe ('User creates a new space', function() {
         describe('editing a space', function(){
 
           beforeEach(function(done){
-            this.browser.visit('/spaces/tree_house/edit', done);
+            this.browser.visit('/spaces/1/edit', done);
           });
 
           describe('another stupid block', function(){
