@@ -7,31 +7,41 @@ var expect = chai.expect;
 var app = require('../app.js');
 var http = require('http');
 var Browser = require('zombie');
+var models = require("../models/user");
 
-
-describe ('User visits sign up', function() {
+describe ('User sign up flow', function() {
 
   before(function(done){
     this.server = http.createServer(app).listen(3002);
+    models.user.drop();
+    models.user.sync(done);
+  });
+
+  before(function(done){
+
     browser = new Browser({site: 'http://localhost:3002' });
     browser.visit('/users/sign-up', done);
   });
 
-  it('should load a welcome page', function() {
-    browser.assert.text('h1', 'Sign Up');
-  });
+  describe ("Create an account", function() {
 
-  describe ('User visits sign up', function() {
-    before(function(done){
+    before(function(done) {
       browser.fill('email', 'homersimpson@springfield.com');
       browser.fill('password', 'DOH!');
       browser.fill('password_confirmation', 'DOH!');
-      browser.pressButton("Sign Up", done);
+      browser.pressButton("Sign up", done);
     });
 
-      it('I can sign up as a new user', function() {
-      browser.assert.text('h1', 'homersimpson@springfield.com');
+    it('should be successful', function() {
+     browser.assert.success();
+   });
 
+    it('I can create an account', function() {
+      console.log(browser.text('h1'));
+      browser.assert.text('h1', 'Welcome to ByteZero Spaces');
+      browser.assert.text('p', 'homersimpson@springfield.com');
     });
+
   });
+
 });

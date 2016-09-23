@@ -8,7 +8,7 @@ var app = require('../app.js');
 var http = require('http');
 var Browser = require('zombie');
 
-describe ('User creates a new space', function() {
+xdescribe ('User creates a new space', function() {
 
   before(function(done){
     this.server = http.createServer(app).listen(3001);

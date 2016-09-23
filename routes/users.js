@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/sign-up', function(req, res) {
-  res.render('signUp');
+  res.render('sign-up');
 });
 
 router.post('/', function(req, res) {

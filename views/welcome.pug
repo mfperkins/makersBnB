@@ -4,8 +4,9 @@ block content
 
   body
 
+  h1 Welcome to ByteZero Spaces
   if email
-    h1= email
+    p= email
     form(action='/users/sign-out-submit', method='post')
       input(type='submit', value='Sign Out')
   else
