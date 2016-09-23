@@ -1,0 +1,17 @@
+html
+
+head
+
+body
+  h1= h1
+
+ul
+
+  each val in spaces
+
+    li(id='title' )= val.dataValues.title + ' '
+    li(id='description')= val.dataValues.description + ' '
+    li(id='price')= val.dataValues.price + ' '
+    li(id='availability')= val.dataValues.availability + ' '
+
+    br

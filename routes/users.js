@@ -5,14 +5,15 @@ var session = require('express-session');
 var bcrypt = require('bcrypt');
 
 /* GET users listing. */
+
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-
 router.get('/sign-up', function(req, res) {
   res.render('signUp', { success: req.session.success, errors: req.session.errors });
   req.session.errors = null;
+  // res.render('sign-up');
 });
 
 router.post('/new', function(req, res) {
@@ -67,6 +68,5 @@ router.post('/sign-out-submit', function(req, res) {
     res.redirect('/users/welcome');
   });
  });
-
 
 module.exports = router;
