@@ -1,8 +1,11 @@
 html
   head
   body
+    if (success !== true)
+        h2= fail
+
     h1 Sign Up
-    form(action='/users', method='post')
+    form(action='/users/new', method='post')
       div
         label(for='email') Email:
           input(type='email', name='email')
