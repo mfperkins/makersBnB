@@ -52,7 +52,6 @@ router.post('/:id/edit', function(req, res){
 });
 
 
-
 router.post('/', function(req, res) {
   models.space.create({
       title: req.body.title,

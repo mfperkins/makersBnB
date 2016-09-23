@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/sign-up', function(req, res) {
-  res.render('signUp', { success: req.session.success, errors: req.session.errors });
+  res.render('sign-up', { success: req.session.success, errors: req.session.errors });
   req.session.errors = null;
   // res.render('sign-up');
 });
@@ -22,9 +22,8 @@ router.post('/new', function(req, res) {
   var errors = req.validationErrors();
   if (errors) {
     req.session.errors = errors;
-    console.log(req.session.errors);
     req.session.success = false;
-    res.render('signUp', { fail: errors[0].msg });
+    res.render('sign-up', { fail: errors[0].msg });
     // res.redirect('/users/sign-up');
   } else {
     req.session.success = true;

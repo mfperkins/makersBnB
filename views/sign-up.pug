@@ -2,12 +2,15 @@ extends layout
 
 block content
 
+  if (success !== true)
+      h2= fail
+
   div(class="row")
     div(class="col-sm-3")
     div(class="col-sm-6")
       h2 Create your account
       hr
-      form(class="form-horizontal", action='/users', method='post')
+      form(class="form-horizontal", action='/users/new', method='post')
         div(class="form-group")
           label(for='email' class="col-sm-4 control-label") Email:
           div(class="col-sm-8")
@@ -22,5 +25,5 @@ block content
             input(type='password', class="form-control", name='password_confirmation')
         div(class="form-group")
           div(class="col-sm-offset-4 col-sm-8")
-            button(type="submit" class="btn btn-success") Sign up
+            button(id="signUpBtn" type="submit" class="btn btn-success") Sign Up
     div(class="col-sm-3")
