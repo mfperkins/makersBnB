@@ -9,7 +9,7 @@ var http = require('http');
 var Browser = require('zombie');
 
 
-xdescribe ('User signs out', function() {
+describe ('User signs out', function() {
 
   before(function(done){
     this.server = http.createServer(app).listen(3009);
