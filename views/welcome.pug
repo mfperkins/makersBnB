@@ -6,8 +6,8 @@ block content
 
   h1 Welcome to ByteZero Spaces
   if email
-    p= email
+    p(id="welcomeEmail")= email
     form(action='/users/sign-out-submit', method='post')
       input(type='submit', value='Sign Out')
   else
-    h2= unidentified
+    p(id="noUser")= unidentified

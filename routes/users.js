@@ -4,6 +4,7 @@ var models  = require('../models');
 var session = require('express-session');
 
 /* GET users listing. */
+
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });

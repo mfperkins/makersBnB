@@ -7,41 +7,86 @@ var expect = chai.expect;
 var app = require('../app.js');
 var http = require('http');
 var Browser = require('zombie');
-var models = require("../models/user");
+var models = require("../models");
 
-describe ('User sign up flow', function() {
+
+describe ("Clean DB", function () {
 
   before(function(done){
-    this.server = http.createServer(app).listen(3002);
     models.user.drop();
-    models.user.sync(done);
+    models.user.sync();
+    done();
   });
 
-  before(function(done){
+  describe ('User sign up flow', function() {
 
-    browser = new Browser({site: 'http://localhost:3002' });
-    browser.visit('/users/sign-up', done);
-  });
-
-  describe ("Create an account", function() {
-
-    before(function(done) {
-      browser.fill('email', 'homersimpson@springfield.com');
-      browser.fill('password', 'DOH!');
-      browser.fill('password_confirmation', 'DOH!');
-      browser.pressButton("Sign up", done);
+    before(function(done){
+      models.user.drop();
+      models.user.sync();
+      this.server = http.createServer(app).listen(3002);
+      browser = new Browser({site: 'http://localhost:3002' });
+      browser.visit('/users/sign-up', done);
     });
 
-    it('should be successful', function() {
-     browser.assert.success();
-   });
+    describe ("Create an account", function() {
 
-    it('I can create an account', function() {
-      console.log(browser.text('h1'));
-      browser.assert.text('h1', 'Welcome to ByteZero Spaces');
-      browser.assert.text('p', 'homersimpson@springfield.com');
+      before(function(done) {
+        browser.fill('email', 'homersimpson@springfield.com');
+        browser.fill('password', 'DOH!');
+        browser.fill('password_confirmation', 'DOH!');
+        browser.pressButton("Sign up", done);
+      });
+
+      it('should create a user', function() {
+        browser.assert.success();
+      });
+
+      it('should welcome a user', function() {
+        browser.assert.text('h1', 'Welcome to ByteZero Spaces');
+        browser.assert.text('p#welcomeEmail', 'homersimpson@springfield.com');
+      });
+
+      describe ('User signs out', function() {
+
+        before(function(done){
+          browser.pressButton("Sign Out", done);
+        });
+
+        it('should sign out', function() {
+          browser.assert.success();
+        });
+
+        it('user can sign out', function() {
+          browser.assert.text('p#noUser', 'No user signed in');
+        });
+
+        describe ('User visits sign in', function() {
+
+          before(function(done){
+            browser.visit('/users/sign-in', done);
+            console.log(browser.text());
+            console.log("8");
+          });
+
+          describe ('User signs in', function () {
+
+            before(function(done) {
+              browser.fill('email', 'homersimpson@springfield.com');
+              browser.fill('password', 'DOH!');
+              browser.pressButton("Sign In", done);
+              console.log("9");
+            });
+
+            it('I can sign in as user', function() {
+              console.log(browser.text());
+              browser.assert.text('h1', 'Welcome to ByteZero Spaces');
+              browser.assert.text('p#welcomeEmail', 'homersimpson@springfield.com');
+              console.log("10");
+            });
+
+          });
+        });
+      });
     });
-
   });
-
 });
