@@ -8,7 +8,6 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-
 router.get('/sign-up', function(req, res) {
   res.render('sign-up');
 });
@@ -48,9 +47,5 @@ router.post('/sign-out-submit', function(req, res) {
     res.redirect('/users/welcome');
   });
  });
-
-
-
-
 
 module.exports = router;
