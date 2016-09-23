@@ -1,6 +1,5 @@
 var express = require('express');
 var session = require('express-session');
-// var expressValidator = require('express-validator');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -24,7 +23,6 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(expressValidator());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session( {
@@ -34,7 +32,6 @@ app.use(session( {
 }));
 
 models.sequelize.sync().then(function() { });
-
 
 app.use('/', routes);
 app.use('/users', users);
