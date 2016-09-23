@@ -22,7 +22,7 @@ xdescribe("spaces", function() {
 
 
   it("count increases by one when a space is added", function(){
-    expect()
+    expect();
   });
 
 

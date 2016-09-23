@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var expressValidator = require('express-validator');
 
 var models = require("./models");
 var routes = require('./routes/index');
@@ -30,6 +31,7 @@ app.use(session( {
   resave: false,
   saveUninitialized: false,
 }));
+app.use(expressValidator());
 
 models.sequelize.sync().then(function() { });
 

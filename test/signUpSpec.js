@@ -34,7 +34,7 @@ describe ("Clean DB", function () {
         browser.fill('email', 'homersimpson@springfield.com');
         browser.fill('password', 'DOH!');
         browser.fill('password_confirmation', 'DOH!');
-        browser.pressButton("Sign up", done);
+        browser.pressButton("Sign Up", done);
       });
 
       it('should create a user', function() {
