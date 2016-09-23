@@ -11,13 +11,12 @@ router.get('/', function(req, res) {
   });
 });
 
-// router.get('/tree_house', function(req, res){
-//   models.space.findAll({where: {id: 1}}).then(function(spaces){
-//   res.render('theSpace', {
-//     spaces: spaces
-//   });
-// });
-// });
+router.get('/new', function(req, res) {
+  res.render('create_space', {
+    h1: 'List a space'
+  });
+});
+
 
 router.get('/:id', function(req, res){
   models.space.findAll({
@@ -30,6 +29,7 @@ router.get('/:id', function(req, res){
   });
 });
 });
+
 
 router.get('/:id/edit', function(req, res){
   models.space.findAll({where: {id: req.params.id}}).then(function(spaces){
@@ -50,11 +50,7 @@ router.post('/:id/edit', function(req, res){
     });
 });
 
-router.get('/new', function(req, res) {
-  res.render('create_space', {
-    h1: 'List a space'
-  });
-});
+
 
 router.post('/', function(req, res) {
   models.space.create({

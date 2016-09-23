@@ -48,7 +48,7 @@ describe ('User creates a new space', function() {
 
         describe('editing a space', function(){
           beforeEach(function(done){
-            this.browser.visit('/spaces/tree_house/edit', done);
+            this.browser.visit('/spaces/1/edit', done);
           });
           describe('another stupid block', function(){
             beforeEach(function(done){
