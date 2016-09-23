@@ -15,8 +15,8 @@ describe ('User visits spaces page', function() {
   before(function(done){
     models.space.drop();
     models.space.sync();
-    this.server = http.createServer(app).listen(3457);
-    this.browser = new Browser({site: 'http://localhost:3457' });
+    this.server = http.createServer(app).listen(3005);
+    this.browser = new Browser({site: 'http://localhost:3005' });
     this.browser.visit('/spaces', done);
   });
 
