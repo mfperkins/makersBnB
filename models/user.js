@@ -36,5 +36,6 @@ module.exports = function(sequelize, DataTypes) {
     password_confirmation: DataTypes.STRING
  });
 
+
  return User;
 };

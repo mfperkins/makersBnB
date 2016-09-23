@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var models  = require('../models');
 var session = require('express-session');
+var bcrypt = require('bcrypt');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -14,6 +15,7 @@ router.get('/sign-up', function(req, res) {
 });
 
 router.post('/', function(req, res) {
+
 req.session.email = req.body.email;
 req.session.save();
   models.user.create({
@@ -37,10 +39,15 @@ router.get('/sign-in', function(req, res) {
 
 router.post('/sign-in-submit', function(req, res) {
   models.user.findAll({where: {email: req.body.email}}).then(function(user) {
+  if (bcrypt.compareSync(req.body.password,user[0].password )) {
     req.session.email = user[0].email;
     req.session.save();
     res.redirect('/users/welcome');
-      });
+  }
+  else {
+   res.redirect('/users/welcome');
+  }
+  });
 });
 
 router.post('/sign-out-submit', function(req, res) {
