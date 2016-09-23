@@ -9,11 +9,12 @@ ul
 
   each val in spaces
 
-    li(id='title' )= val.dataValues.title + ' '
+    li(id='title' )
+      a(href='http://localhost:3000/spaces/' + val.dataValues.id)= val.dataValues.title + ' '
     li(id='description')= val.dataValues.description + ' '
     li(id='price')= val.dataValues.price + ' '
     li(id='availability')= val.dataValues.availability + ' '
 
-    a(href='http://localhost:3000/spaces/' + val.dataValues.id) Click here to edit this space!
+
 
     br
