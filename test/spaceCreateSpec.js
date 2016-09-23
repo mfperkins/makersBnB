@@ -44,23 +44,29 @@ describe ('User creates a new space', function() {
           this.browser.assert.text('ul', 'Arctic Tree House Elsa meets the Jungle Book 10 never');
         });
 
+
+
         describe('editing a space', function(){
           beforeEach(function(done){
-            this.browser.visit('/spaces/tree_house/edit');
-            this.browser
-              .fill('title', 'Desert Tree House')
-              .fill('description', 'Lion King meets the mighty jungle')
-              .fill('price', 20)
-              .fill('availability', 'sometimes')
-              .pressButton('Edit this space!', done);
+            this.browser.visit('/spaces/tree_house/edit', done);
           });
+          describe('another stupid block', function(){
+            beforeEach(function(done){
+              this.browser
+                .fill('title', 'Desert Tree House')
+                .fill('description', 'Lion King meets the mighty jungle')
+                .fill('price', 20)
+                .fill('availability', 'sometimes')
+                .pressButton('Edit this space!', done);
+            });
 
-          // it('should be able edit a page', function(){
-          //   this.browser.assert.success();
-          //   this.browser.assert.text('ul', 'Desert Tree House Lion King meets the mighty jungle ');
-          // });
+            it('should be able edit a page', function(){
+              this.browser.assert.success();
+              this.browser.assert.text('ul', 'Desert Tree House Lion King meets the mighty jungle 20 sometimes');
+            });
+
         });
-
+        });
 
 
         });
