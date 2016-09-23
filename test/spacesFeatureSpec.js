@@ -9,19 +9,19 @@ var http = require('http');
 var Browser = require('zombie');
 var models = require('../models');
 
-
-describe ('User visits spaces page', function() {
-
-  before(function(done){
-    models.space.drop();
-    models.space.sync();
-    this.server = http.createServer(app).listen(3457);
-    this.browser = new Browser({site: 'http://localhost:3457' });
-    this.browser.visit('/spaces', done);
-  });
-
-  it("should display a page with spaces", function() {
-    this.browser.assert.text("h1", "Available spaces:");
-  });
-
-});
+// 
+// describe ('User visits spaces page', function() {
+//
+//   before(function(done){
+//     models.space.drop();
+//     models.space.sync();
+//     this.server = http.createServer(app).listen(3005);
+//     this.browser = new Browser({site: 'http://localhost:3005' });
+//     this.browser.visit('/spaces', done);
+//   });
+//
+//   it("should display a page with spaces", function() {
+//     this.browser.assert.text("h1", "Available spaces:");
+//   });
+//
+// });
