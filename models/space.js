@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
    title: DataTypes.STRING,
    description: DataTypes.STRING,
    price: DataTypes.INTEGER,
-   availability: DataTypes.STRING
+   availability: DataTypes.STRING,
  });
 
  return Space;
