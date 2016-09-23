@@ -33,7 +33,6 @@ module.exports = function(sequelize, DataTypes) {
             this.setDataValue('password', hash);
         }
       },
-    password_confirmation: DataTypes.STRING
  });
 
 
