@@ -1,6 +1,12 @@
 extends layout
 
 block content
-    
+
   body
-    h1 Welcome homersimpson@springfield.com
+
+  if email
+    h1= email
+    form(action='/users/sign-out-submit', method='post')
+      input(type='submit', value='Sign Out')
+  else
+    h2= unidentified
