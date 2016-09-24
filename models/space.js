@@ -5,8 +5,15 @@ module.exports = function(sequelize, DataTypes) {
    title: DataTypes.STRING,
    description: DataTypes.TEXT,
    price: DataTypes.INTEGER,
-   availability: DataTypes.STRING,
+   availability: DataTypes.STRING
+ },{
+   classMethods: {
+      associate: function(models) {
+        Space.belongsTo(models.user, { foreignKey: 'user_id'});
+      }
+    }
  });
+
 
  return Space;
 };
