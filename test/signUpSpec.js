@@ -39,22 +39,17 @@ describe ("Clean DB", function () {
       });
 
       it('should welcome a user', function() {
-        browser.assert.text('h1', 'Welcome to ByteZero Spaces');
-        browser.assert.text('p#welcomeEmail', 'homersimpson@springfield.com');
+        browser.assert.text('h2', 'Welcome homersimpson@springfield.com to Byte0 BnB');
       });
 
       describe ('User signs out', function() {
 
         before(function(done){
-          browser.pressButton("Sign Out", done);
+          browser.pressButton("Log out", done);
         });
 
         it('should sign out', function() {
           browser.assert.success();
-        });
-
-        it('user can sign out', function() {
-          browser.assert.text('p#noUser', 'No user signed in');
         });
 
         describe ('User visits sign in', function() {
@@ -68,12 +63,12 @@ describe ("Clean DB", function () {
             before(function(done) {
               browser.fill('email', 'homersimpson@springfield.com');
               browser.fill('password', 'DOH!');
-              browser.pressButton("Sign In", done);
+              browser.pressButton("button#signInBtn", done);
             });
 
             it('I can sign in as user', function() {
-              browser.assert.text('h1', 'Welcome to ByteZero Spaces');
-              browser.assert.text('p#welcomeEmail', 'homersimpson@springfield.com');
+              console.log(browser.text());
+              browser.assert.text('h2', 'Welcome homersimpson@springfield.com to Byte0 BnB');
             });
 
           });

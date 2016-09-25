@@ -47,7 +47,7 @@ describe ("Clean DB", function () {
 
         it('should take you to the page of the property', function(){
           browser.assert.success();
-          browser.assert.text('ul', 'Arctic Tree House Elsa meets the Jungle Book 10 never');
+          browser.assert.text('li#title', 'Arctic Tree House');
         });
 
         describe('editing a space', function(){
@@ -68,7 +68,7 @@ describe ("Clean DB", function () {
 
           it('should be able edit a page', function(){
             browser.assert.success();
-          browser.assert.text('ul', 'Desert Tree House Lion King meets the mighty jungle 20 sometimes');
+          browser.assert.text('li#title', 'Desert Tree House');
           });
 
           });
