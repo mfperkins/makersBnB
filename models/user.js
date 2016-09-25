@@ -1,6 +1,7 @@
 'use-strict';
 var bcrypt = require('bcrypt');
 
+
 module.exports = function(sequelize, DataTypes) {
  var User = sequelize.define("user", {
     email: {
@@ -32,8 +33,13 @@ module.exports = function(sequelize, DataTypes) {
 
             this.setDataValue('password', hash);
         }
-      },
-    password_confirmation: DataTypes.STRING
+      }
+    },{
+    classMethods: {
+      associate: function(models) {
+        User.hasMany(models.space, { foreignKey: 'user_id'});
+      }
+    }
  });
 
 
