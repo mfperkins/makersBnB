@@ -12,8 +12,8 @@ var models = require("../models");
 describe ("Clean DB", function () {
 
   before(function(done){
-    models.user.drop();
-    models.user.sync();
+    models.user.drop({force: true});
+    models.user.sync({force: true});
     done();
   });
 

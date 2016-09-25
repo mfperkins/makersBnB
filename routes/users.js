@@ -29,8 +29,7 @@ router.post('/new', function(req, res) {
     req.session.save();
     models.user.create({
         email: req.body.email,
-        password: req.body.password,
-        password_confirmation: req.body.password_confirmation
+        password: req.body.password
       }).then(function() {
     res.redirect('/spaces');
     });
