@@ -7,7 +7,9 @@ router.get('/', function(req, res) {
   models.space.findAll().then(function(spaces) {
     res.render('spaces', {
       h1: "Available spaces:",
-      spaces: spaces
+      spaces: spaces,
+      email: req.session.email,
+      unidentified:'No user signed in',
     });
   });
 });

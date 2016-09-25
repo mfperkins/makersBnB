@@ -2,14 +2,21 @@ extends layout
 
 block content
 
-  body
-    h1 Sign In
-    form(action='/users/sign-in-submit', method='post')
-      div
-        label(for='email') Email:
-          input(type='email', name='email')
-      div
-        label(for='password') Password:
-          input(type='password', name='password')
-      div
-        input(type='submit', value='Sign In')
+  div(class="row")
+    div(class="col-sm-3")
+    div(class="col-sm-6")
+      h2 Sign in
+      hr
+      form(class="form-horizontal", action='/users/sign-in-submit', method='post')
+        div(class="form-group")
+          label(for='email' class="col-sm-4 control-label") Email:
+          div(class="col-sm-8")
+            input(type='email', class="form-control", placeholder="you@example.com", name='email')
+        div(class="form-group")
+          label(for='password' class="col-sm-4 control-label") Password:
+          div(class="col-sm-8")
+            input(type='password', class="form-control", name='password')
+        div(class="form-group")
+          div(class="col-sm-offset-4 col-sm-8")
+            button(id="signInBtn" type="submit" class="btn btn-success") Sign In
+    div(class="col-sm-3")

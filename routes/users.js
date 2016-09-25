@@ -13,7 +13,6 @@ router.get('/', function(req, res, next) {
 router.get('/sign-up', function(req, res) {
   res.render('sign-up', { success: req.session.success, errors: req.session.errors });
   req.session.errors = null;
-  // res.render('sign-up');
 });
 
 router.post('/new', function(req, res) {
@@ -24,7 +23,6 @@ router.post('/new', function(req, res) {
     req.session.errors = errors;
     req.session.success = false;
     res.render('sign-up', { fail: errors[0].msg });
-    // res.redirect('/users/sign-up');
   } else {
     req.session.success = true;
     req.session.email = req.body.email;
@@ -34,14 +32,8 @@ router.post('/new', function(req, res) {
         password: req.body.password,
         password_confirmation: req.body.password_confirmation
       }).then(function() {
-    res.redirect('/users/welcome');
+    res.redirect('/spaces');
     });
-  }
-});
-
-router.get('/welcome', function(req, res) {
-  if (req.session !== null) {
-    res.render('welcome', {email: req.session.email, unidentified:'No user signed in'});
   }
 });
 
@@ -54,17 +46,17 @@ router.post('/sign-in-submit', function(req, res, next) {
     if (bcrypt.compareSync(req.body.password,user[0].password )) {
       req.session.email = user[0].email;
       req.session.save();
-      res.redirect('/users/welcome');
+      res.redirect('/spaces');
     }
     else {
-     res.redirect('/users/welcome');
+     res.redirect('/sign-in-submit');
     }
   });
 });
 
 router.post('/sign-out-submit', function(req, res) {
   req.session.destroy(function() {
-    res.redirect('/users/welcome');
+    res.redirect('/spaces');
   });
  });
 

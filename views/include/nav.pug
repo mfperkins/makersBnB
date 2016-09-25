@@ -25,5 +25,9 @@ nav(class="navbar navbar-default" style="margin-bottom: 25px")
           a(class="btn" href="/users/sign-up")
             button(class="btn btn-success") Sign Up
         li
-          a(class="btn" href="/users/sign-up")
-            button(class="btn btn-warning") Log out
+          a(class="btn" href="/users/sign-in")
+            button(class="btn btn-success") Sign In
+        li(class="logOutBtn")
+          form(action='/users/sign-out-submit', method='post')
+            a(class="btn" href="/users/sign-out-submit")
+              button(class="btn btn-warning") Log out

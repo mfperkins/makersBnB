@@ -1,13 +1,35 @@
-html
-  head
-    h1= h1
-  body
+extends layout
 
-  each val in spaces
+block content
 
-    form(action="/spaces/"+(val.dataValues.id)+"/edit", method="post")
-      input(type="text", name="title")
-      input(type="text", name="description")
-      input(type="text", name="price")
-      input(type="text", name="availability")
-      input(type="submit", name="Edit this space!")
+
+  div(class="row")
+    div(class="col-sm-1")
+    div(class="col-sm-10")
+
+      h2 Edit your space
+      hr
+
+      each val in spaces
+
+        form(action="/spaces/"+(val.dataValues.id)+"/edit", method="post")
+          div(class="form-group")
+            label(for='title' class="col-sm-2 control-label") Name
+            div(class="col-sm-10")
+              input(type='text', class="form-control", placeholder="Your space name", name='title')
+          div(class="form-group")
+            label(for='price' class="col-sm-2 control-label") Price:
+            div(class="col-sm-10")
+              input(type='text', class="form-control", placeholder="e.g. $150/day", name='price')
+          div(class="form-group")
+            label(for='availability' class="col-sm-2 control-label") Availability:
+            div(class="col-sm-10")
+              input(type='text', class="form-control", name='availability', placeholder="Always ...")
+          div(class="form-group")
+            label(for='description' class="col-sm-2 control-label") Description:
+            div(class="col-sm-10")
+              textarea(type='text', class="form-control", rows='6', placeholder="Beautiful garden tree house ...", name='description')
+          div(class="form-group")
+            div(class="col-sm-offset-2 col-sm-8")
+              button(type="submit" class="btn btn-success") List your space!
+      div(class="col-sm-1")

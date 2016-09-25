@@ -2,8 +2,10 @@ extends layout
 
 block content
 
-  body
-    h1= h1
+  if email
+    h2 Welcome #{email} to Byte0 BnB
+
+  h1= h1
 
   ul
 
